@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="heading">
+          <div class="container">
+            <div class="row d-flex justify-content-center text-center">
+              <div class="col-lg-8">
+                <h1>Blog Details</h1>
+                <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="breadcrumbs">
+          <div class="container">
+            <ol>
+              <li><a href="{% url 'home' %}">Home</a></li>
+              <li class="current">ویرایش پست</li>
+            </ol>
+          </div>
+        </nav>
+      </div><!-- End Page Title -->
+  
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-8">
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form | crispy}}<br>
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+          </div>
+  
+        </div>
+      </div>
+
+{% endblock content %}
